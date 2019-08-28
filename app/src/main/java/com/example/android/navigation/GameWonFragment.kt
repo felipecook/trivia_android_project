@@ -35,9 +35,6 @@ class GameWonFragment : Fragment() {
         binding.nextMatchButton.setOnClickListener { View ->
             View.findNavController().navigate(GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
         }
-        Toast.makeText(context,
-                "NumCorrect: ${args.numCorrect}, NumQuestions: ${args.numQuestions}", Toast.LENGTH_LONG).show()
-
         setHasOptionsMenu(true)
 
 
@@ -67,5 +64,6 @@ class GameWonFragment : Fragment() {
         when (item!!.itemId) {
             R.id.share -> shareSuccess()
         }
+        return super.onOptionsItemSelected(item)
     }
 }
